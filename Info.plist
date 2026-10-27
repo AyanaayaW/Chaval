@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key><string>dev.chaval.dock</string>
+	<key>CFBundleName</key><string>Chaval</string>
+	<key>CFBundleExecutable</key><string>Chaval</string>
+	<key>CFBundlePackageType</key><string>APPL</string>
+	<key>CFBundleShortVersionString</key><string>1.0</string>
+	<key>CFBundleVersion</key><string>1</string>
+	<key>LSMinimumSystemVersion</key><string>14.0</string>
+	<key>LSUIElement</key><true/>
+	<key>NSPrincipalClass</key><string>NSApplication</string>
+	<key>NSLocationWhenInUseUsageDescription</key><string>macOS only tells apps the name of your Wi-Fi network, and of networks nearby, when they have Location access. Chaval never reads your location.</string>
+	<key>NSLocationUsageDescription</key><string>macOS only tells apps the name of your Wi-Fi network, and of networks nearby, when they have Location access. Chaval never reads your location.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key><string>Chaval's top bar lists your Bluetooth devices so you can connect and disconnect them.</string>
+	<key>NSAppleEventsUsageDescription</key><string>Chaval uses Finder to empty the Trash and System Events to manage login items.</string>
+</dict>
+</plist>
