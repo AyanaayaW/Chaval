@@ -18,6 +18,7 @@ struct SettingsView: View {
     @EnvironmentObject var nav: SettingsWindow.Nav
     @State private var trusted = AXIsProcessTrusted()
     @State private var agent = LaunchAgent.isOn
+    @State private var updateNote = ""
 
     private static let tabs: [(SettingsWindow.Tab, String, String)] = [
         (.dock, "Dock", "dock.rectangle"), (.appearance, "Appearance", "paintbrush"), (.animation, "Animation", "wand.and.stars"),
@@ -624,6 +625,13 @@ struct SettingsView: View {
         }
         Section("Startup") {
             Toggle("Open at login (relaunches if Chaval ever crashes)", isOn: Binding(get: { agent }, set: { agent = $0; LaunchAgent.set($0) }))
+        }
+        Section("Updates") {
+            Toggle("Install updates automatically", isOn: s.autoUpdate)
+            LabeledContent("Version \(Updater.version)") {
+                Button("Check now") { updateNote = "Checking…"; Updater.check { updateNote = $0 } }
+            }
+            if !updateNote.isEmpty { Text(updateNote).font(.caption).foregroundStyle(.secondary) }
         }
         Section("Layout") {
             Button("Re-import layout from the system Dock") { SystemDock.importLayout(into: store) }

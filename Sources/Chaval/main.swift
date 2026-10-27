@@ -27,6 +27,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         KeepAwake.apply() // the Awake toggle, if it was on before Chaval last quit
         Switcher.shared.sync()
         Tiler.shared.sync()
+        Updater.start()
         if !UserDefaults.standard.bool(forKey: "onboarded") {
             UserDefaults.standard.set(true, forKey: "onboarded")
             AXIsProcessTrustedWithOptions(["AXTrustedCheckOptionPrompt": true] as CFDictionary)
@@ -342,6 +343,14 @@ if CommandLine.arguments.contains("--selftest") {
     let bar = Store.salvage(try! JSONSerialization.data(withJSONObject: oldBar), BarConfig())
     assert(bar.theme.accentHex == "112233FF" && bar.theme.borderWidth == BarTheme().borderWidth, "a new theme setting doesn't reset the theme")
     print("settings selftest ok")
+    assert(Updater.newer("0.2-beta", than: "0.1-beta") && Updater.newer("0.10", than: "0.9") && Updater.newer("0.1", than: "0.1-beta"))
+    assert(!Updater.newer("0.1-beta", than: "0.1-beta") && !Updater.newer("0.1-beta", than: "0.1") && !Updater.newer("0.9", than: "0.10"))
+    print("updater selftest ok")
+    exit(0)
+}
+
+if let i = CommandLine.arguments.firstIndex(of: "--same-signer") { // diagnostic: would the updater accept this app?
+    print(Updater.sameSigner(URL(fileURLWithPath: CommandLine.arguments.dropFirst(i + 1).first ?? "")))
     exit(0)
 }
 

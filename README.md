@@ -68,6 +68,7 @@ Requires **macOS 14 or later**. I've only tested it on an M4 MacBook Air running
 
 **From the release:** download the zip from [Releases](../../releases), unzip it and move `Chaval.app` to
 Applications. It isn't notarized by Apple, so the first time you have to **right-click → Open**.
+After that, Chaval updates itself from these releases (Settings → Updates; you can turn it off).
 
 **From source** (needs Xcode or the Swift toolchain):
 

@@ -144,6 +144,7 @@ struct Settings: Codable, Equatable {
     var tileAccordionPeek = 30.0 // how much of the windows behind the focused one shows, each side
     var focusFollowsMouse = true // with tiling on, the window under the pointer takes focus
     var cmdTab = true        // Chaval's window switcher replaces the system's ⌘Tab
+    var autoUpdate = true    // install new GitHub releases on their own (Updater)
     var chavalMenus = true     // the top bar's app menus open in Chaval's theme (off: the real macOS menus)
     var borders = true       // the tiler draws window borders that move with its glides
     var borderWidth = 4.0
