@@ -1,9 +1,16 @@
 # Chaval
 
-**A Dock replacement, top bar, launcher and animated tiling window manager for macOS, in one native app.**
+**An all-in-one ricing helper for macOS.** Dock, top bar, launcher, themes and an animated tiling window manager,
+all in one native app.
 
-Chaval tries to make macOS feel more like a Linux tiling setup (Hyprland / Omarchy) without turning off System
-Integrity Protection or touching the OS. It's written in Swift and AppKit with no third-party dependencies.
+Ricing a Linux desktop means making it your own: a tiling window manager, a custom bar, a matching theme across
+everything. On macOS that usually takes half a dozen separate tools (yabai, skhd, SketchyBar, JankyBorders, Raycast,
+…) wired together by hand. Chaval does all of it in one app, aiming for the feel of Hyprland / Omarchy, without
+turning off System Integrity Protection or touching the OS. It's written in Swift and AppKit with no third-party
+dependencies.
+
+### Why "Chaval"?
+*Chaval* (चावल) is Hindi for **rice**, because it helps you rice macOS. 🍚
 
 > [!WARNING]
 > **Chaval is vibecoded.** Almost all of the code was written by an AI (Claude) while I described what I wanted,
@@ -15,7 +22,7 @@ Integrity Protection or touching the OS. It's written in Swift and AppKit with n
 ## What's in it
 
 ### Dock
-- A full Dock replacement: pinned apps, running apps, recents, folders/stacks, Trash, minimized windows, badges and
+- Replaces the macOS Dock: pinned apps, running apps, recents, folders/stacks, Trash, minimized windows, badges and
   magnification. Or switch to **taskbar mode**: one tile per open window.
 - Widgets can sit in the dock: clock, date, desktops, Now Playing, battery, CPU and memory.
 - Place it on any edge. Pick one display, or let it follow your pointer: push against the bottom of another screen
